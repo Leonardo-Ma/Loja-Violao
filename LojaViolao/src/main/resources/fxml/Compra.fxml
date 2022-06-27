@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="670.0" prefWidth="960.0" style="-fx-border-color: black; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.CompraController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="686.0" minWidth="10.0" prefWidth="454.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="888.0" minWidth="10.0" prefWidth="502.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="684.0" minHeight="10.0" prefHeight="593.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="684.0" minHeight="10.0" prefHeight="593.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="589.0" prefWidth="494.0" style="-fx-border-color: black; -fx-border-width: 2;">
+         <children>
+            <Pane fx:id="PnEscolha" layoutX="23.0" layoutY="45.0" prefHeight="180.0" prefWidth="414.0">
+               <children>
+                  <Button fx:id="BtnComprar" layoutX="64.0" layoutY="63.0" mnemonicParsing="false" onAction="#BtnComprar_Action" prefHeight="42.0" prefWidth="275.0" style="-fx-border-color: black; -fx-font-size: 18; -fx-background-color: green; -fx-font-weight: bold;" text="Realizar uma compra">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="56.0" layoutY="6.0" style="-fx-font-size: 20;" text="Escolha o que deseja fazer:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="BtnConsultar" layoutX="63.0" layoutY="134.0" mnemonicParsing="false" onAction="#BtnConsultar_Action" prefHeight="42.0" prefWidth="275.0" style="-fx-border-color: black; -fx-font-size: 18; -fx-background-color: yellow; -fx-font-weight: bold;" text="Consultar compras">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="42.0" fitWidth="59.0" layoutX="14.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                     <image>
+                        <Image url="@../images/DinheiroVoando.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="59.0" layoutX="350.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/DinheiroVoando.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="59.0" layoutX="346.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Lupa.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="59.0" layoutX="14.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Lupa.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Label fx:id="TextInformacao" layoutX="171.0" layoutY="244.0" style="-fx-font-size: 20; -fx-font-weight: bold;" text="Selecione um produto &#10;para comprar na tabela&#10;                             ------&gt;" textAlignment="JUSTIFY" visible="false">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="LstVioloes" onKeyPressed="#LstVioloes_KeyPressed" onMouseClicked="#LstVioloes_MouseClicked" prefHeight="586.0" prefWidth="555.0" style="-fx-border-color: black; -fx-border-width: 2;" visible="false" GridPane.columnIndex="1">
+         <columns>
+            <TableColumn fx:id="ClnIdViolao" prefWidth="75.0" text="Id:" />
+            <TableColumn fx:id="ClnMarcaViolao" prefWidth="75.0" text="Marca:" />
+            <TableColumn fx:id="ClnTipoCorda" prefWidth="122.0" text="Tipo de corda:" />
+            <TableColumn fx:id="ClnPrecoVenda" prefWidth="136.0" text="Preço de venda:" />
+            <TableColumn fx:id="ClnEstoque" prefWidth="75.0" text="Estoque:" />
+         </columns>
+      </TableView>
+      <TableView fx:id="LstCompras" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 2;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn fx:id="ClnIdCompra" prefWidth="126.0" text="Id da Compra:" />
+          <TableColumn fx:id="ClnTotalCompra" prefWidth="135.0" text="Total da compra:" />
+            <TableColumn fx:id="ClnDataCompra" prefWidth="237.0" text="Data da compra(AA-MM-DD):" />
+        </columns>
+      </TableView>
+      <Pane fx:id="PnDetalhes" prefHeight="288.0" prefWidth="477.0" style="-fx-border-color: black;" visible="false" GridPane.rowIndex="1">
+         <children>
+            <TextField fx:id="TxtValorCompra" layoutX="233.0" layoutY="66.0" prefHeight="26.0" prefWidth="136.0" promptText="R$" style="-fx-border-color: black;" />
+            <Button fx:id="BtnConfirmar" layoutX="35.0" layoutY="212.0" mnemonicParsing="false" onAction="#BtnConfirmar_Action" prefHeight="48.0" prefWidth="171.0" style="-fx-font-size: 23; -fx-border-color: black; -fx-background-color: green; -fx-font-weight: bold;" text="Confirmar" />
+            <Button fx:id="BtnCancelar" layoutX="228.0" layoutY="212.0" mnemonicParsing="false" onAction="#BtnCancelar_Action" prefHeight="48.0" prefWidth="171.0" style="-fx-font-size: 23; -fx-border-color: black; -fx-background-color: red; -fx-font-weight: bold;" text="Cancelar" />
+            <Label layoutX="37.0" layoutY="66.0" style="-fx-font-size: 22;" text="Valor da compra:" />
+            <Label layoutX="56.0" layoutY="107.0" style="-fx-font-size: 22;" text="Quantidade:" />
+            <TextField fx:id="TxtQuantidade" layoutX="233.0" layoutY="107.0" prefHeight="26.0" prefWidth="92.0" promptText="Un." style="-fx-border-color: black;" />
+            <Label layoutX="35.0" layoutY="141.0" style="-fx-font-size: 22;" text="Data da compra:" />
+            <TextField fx:id="TxtDataCompra" layoutX="233.0" layoutY="141.0" prefHeight="26.0" prefWidth="136.0" promptText="AAAA-MM-DD" style="-fx-border-color: black;" />
+         </children>
+      </Pane>
+   </children>
+</GridPane>

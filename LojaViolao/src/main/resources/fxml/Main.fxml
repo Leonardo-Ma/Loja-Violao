@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane minHeight="505.0" minWidth="984.0" prefHeight="594.0" prefWidth="1064.0" style="-fx-border-color: black; -fx-border-width: 5; -fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.MainController">
+   <children>
+      <Label layoutX="226.0" layoutY="31.0" style="-fx-font-size: 31;" text="Sistema de gerenciamento da loja">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Button fx:id="BtnCaixa" layoutX="262.0" layoutY="363.0" mnemonicParsing="false" onAction="#BtnCaixa_Action" prefHeight="39.0" prefWidth="460.0" style="-fx-font-size: 18; -fx-border-color: black;" text="Consultar Fechamento de Caixa Diario" />
+      <Button fx:id="BtnViolao" layoutX="262.0" layoutY="108.0" mnemonicParsing="false" onAction="#BtnViolao_Action" prefHeight="39.0" prefWidth="460.0" style="-fx-font-size: 18; -fx-border-color: black;" text="Gerenciar Violões" />
+      <Button fx:id="BtnCompra" layoutX="262.0" layoutY="189.0" mnemonicParsing="false" onAction="#BtnCompra_Action" prefHeight="39.0" prefWidth="460.0" style="-fx-font-size: 18; -fx-border-color: black;" text="Realizar uma compra" />
+      <Label layoutX="821.0" layoutY="493.0" onMouseClicked="#EasterEgg_Action" text="Prog 3 S.A.">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Button fx:id="BtnVenda" layoutX="262.0" layoutY="277.0" mnemonicParsing="false" onAction="#BtnVenda_Action" prefHeight="39.0" prefWidth="460.0" style="-fx-font-size: 18; -fx-border-color: black;" text="Realizar uma venda" />
+      <ImageView fx:id="ImgDinheiroMeme" fitHeight="60.0" fitWidth="132.0" layoutX="732.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/DinheiroMeme.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ImgDinheiro" fitHeight="60.0" fitWidth="130.0" layoutX="732.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/DinheiroVoando.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ImgViolao" fitHeight="51.0" fitWidth="152.0" layoutX="732.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/Violao.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ImgLupa" fitHeight="60.0" fitWidth="88.0" layoutX="732.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/Lupa.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.4830917874396135" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="518.0" minWidth="666.0" prefHeight="642.0" prefWidth="978.0" style="-fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.ViolaoController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: 2;">
+         <children>
+            <Button fx:id="BtnIncluir" layoutX="117.0" layoutY="246.0" mnemonicParsing="false" onAction="#BtnIncluir_Action" prefHeight="42.0" prefWidth="231.0" style="-fx-font-size: 25; -fx-font-weight: bold; -fx-background-color: orange; -fx-border-color: black;" text="Incluir" />
+            <Pane fx:id="PnDados" layoutY="310.0" prefHeight="320.0" prefWidth="464.0" style="-fx-border-color: black; -fx-border-width: 2;" visible="false">
+               <children>
+                  <TextField fx:id="TxtMarca" layoutX="179.0" layoutY="63.0" prefHeight="36.0" prefWidth="215.0" style="-fx-border-color: black;" />
+                  <Label layoutX="65.0" layoutY="58.0" style="-fx-font-size: 30;" text="Marca:" />
+                  <Label layoutX="36.0" layoutY="114.0" style="-fx-font-size: 30;" text="Tipo de corda:" />
+                  <ComboBox fx:id="CbxTipoCorda" layoutX="260.0" layoutY="114.0" prefHeight="36.0" prefWidth="131.0" style="-fx-border-color: black;" />
+                  <Label layoutX="29.0" layoutY="160.0" style="-fx-font-size: 30;" text="Preço de venda:" />
+                  <TextField fx:id="TxtPrecoVenda" layoutX="284.0" layoutY="160.0" prefHeight="36.0" prefWidth="102.0" promptText="R$" style="-fx-border-color: black;" />
+                  <Button fx:id="BtnGravar" layoutX="38.0" layoutY="229.0" mnemonicParsing="false" onAction="#BtnGravar_Action" prefHeight="48.0" prefWidth="171.0" style="-fx-font-size: 23; -fx-border-color: black; -fx-background-color: green; -fx-font-weight: bold;" text="Confirmar" />
+                  <Button fx:id="BtnCancelar" layoutX="249.0" layoutY="229.0" mnemonicParsing="false" onAction="#BtnCancelar_Action" prefHeight="48.0" prefWidth="171.0" style="-fx-font-size: 23; -fx-border-color: black; -fx-background-color: red; -fx-font-weight: bold;" text="Cancelar" />
+               </children>
+            </Pane>
+            <ImageView fx:id="ImgViolao" fitHeight="107.0" fitWidth="266.0" layoutX="99.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" rotate="-20.6">
+               <image>
+                  <Image url="@../images/Violao.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="60.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 22; -fx-font-weight: bold;" text="Gerenciamento dos violões:" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Button fx:id="BtnExcluir" layoutX="249.0" layoutY="550.0" mnemonicParsing="false" onAction="#BtnExcluir_Action" prefHeight="47.0" prefWidth="131.0" style="-fx-font-size: 23; -fx-border-color: black; -fx-background-color: red; -fx-font-weight: bold;" text="Excluir" visible="false" />
+            <Button fx:id="BtnAlterar" layoutX="38.0" layoutY="550.0" mnemonicParsing="false" onAction="#BtnAlterar_Action" prefHeight="47.0" prefWidth="131.0" style="-fx-font-size: 23; -fx-border-color: black; -fx-background-color: green; -fx-font-weight: bold;" text="Alterar" visible="false" />
+            <TableView fx:id="LstVioloes" onKeyPressed="#LstVioloes_KeyPressed" onMouseClicked="#LstVioloes_MouseClicked" prefHeight="534.0" prefWidth="496.0" style="-fx-border-color: black; -fx-border-width: 2;">
+              <columns>
+                <TableColumn fx:id="ClnIdViolao" prefWidth="75.0" text="Id:" />
+                <TableColumn fx:id="ClnMarcaViolao" prefWidth="75.0" text="Marca:" />
+                  <TableColumn fx:id="ClnTipoCorda" prefWidth="122.0" text="Tipo de corda:" />
+                  <TableColumn fx:id="ClnPrecoVenda" prefWidth="136.0" text="Preço de venda:" />
+                  <TableColumn fx:id="ClnEstoque" prefWidth="75.0" text="Estoque:" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
