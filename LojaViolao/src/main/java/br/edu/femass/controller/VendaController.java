@@ -101,6 +101,8 @@ public class VendaController implements Initializable
 
         detalhesVenda.setQuantidade(Integer.valueOf(TxtQuantidade.getText()));
         detalhesVenda.setPrecoUnitario(Float.valueOf(TxtValorVenda.getText()));
+        
+        if(Float.valueOf(TxtQuantidade.getText()) > violao.getEstoque()) return;
 
         try
         {
