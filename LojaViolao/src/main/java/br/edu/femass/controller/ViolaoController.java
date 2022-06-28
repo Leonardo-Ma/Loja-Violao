@@ -41,8 +41,6 @@ public class ViolaoController implements Initializable
 
     @FXML private TextField TxtPrecoVenda;
 
-    @FXML private TextField TxtId;
-
     @FXML private ComboBox<TipoCorda> CbxTipoCorda;
 
     @FXML private Button BtnIncluir;
@@ -55,7 +53,6 @@ public class ViolaoController implements Initializable
 
     @FXML private Button BtnGravar;
 
-    @FXML private Label LblId;
 
     @FXML
     private void BtnIncluir_Action()
@@ -134,8 +131,6 @@ public class ViolaoController implements Initializable
             limparTela();
             PnDados.setVisible(false);
             BtnIncluir.setVisible(true);
-            TxtId.setVisible(false);
-            LblId.setVisible(false);
             atualizarLista();
         }
     }
@@ -158,8 +153,6 @@ public class ViolaoController implements Initializable
         BtnExcluir.setVisible(false);
         PnDados.setVisible(false);
         BtnAlterar.setVisible(false);
-        TxtId.setVisible(false);
-        LblId.setVisible(false);
         atualizarLista();
     }
 
